@@ -2,7 +2,7 @@
 
 class Produk {
 
-	public  	$judul,
+	private  	$judul,
 				$penulis, 
 				$penerbit,
 				$harga,
