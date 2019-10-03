@@ -4,9 +4,9 @@ interface InfoProduk {
 	public function getInfoProduk();
 }
 
-class Produk {
+abstract class Produk {
 
-	private  	$judul,
+	protected  	$judul,
 				$penulis, 
 				$penerbit,
 				$harga,
@@ -64,10 +64,7 @@ class Produk {
 		return "$this->penulis, $this->penerbit";
 	}
 
-	public function getInfo() {
-		$str = "{$this->judul} | {$this->getLabel()} (Rp. {$this->harga})";
-		return $str;
-	}
+	abstract public function getInfo();
 
 }
 
@@ -102,6 +99,11 @@ class Komik extends Produk implements InfoProduk {
 		return $str;
 	}
 
+	public function getInfo() {
+		$str = "{$this->judul} | {$this->getLabel()} (Rp. {$this->harga})";
+		return $str;
+	}
+
 }
 
 class Game extends Produk implements InfoProduk {
@@ -114,6 +116,11 @@ class Game extends Produk implements InfoProduk {
 
 	public function getInfoProduk() {
 		$str = "Game : " . $this->getInfo() . " - {$this->waktuMain} Jam.";
+		return $str;
+	}
+
+	public function getInfo() {
+		$str = "{$this->judul} | {$this->getLabel()} (Rp. {$this->harga})";
 		return $str;
 	}
 
