@@ -11,6 +11,9 @@ require_once 'app/init.php';
 // $cetakProduk->tambahProduk($produk2);
 // echo $cetakProduk->cetak();
 
-new app\Service\User();
+use app\Service\User as ServiceUser;
+use app\Produk\User as ProdukUser;
+
+new ServiceUser();
 echo "<br>";
-new app\Produk\User();
+new ProdukUser();
